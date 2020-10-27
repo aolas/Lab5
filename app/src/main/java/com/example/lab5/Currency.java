@@ -1,5 +1,12 @@
 package com.example.lab5;
 
+import android.content.res.Resources;
+
+import androidx.core.graphics.drawable.IconCompat;
+
+import static androidx.core.content.res.TypedArrayUtils.getText;
+
+
 public class Currency {
     String baseName;
     String value;
@@ -27,6 +34,6 @@ public class Currency {
 
     @Override
     public String toString() {
-        return "base: "+ baseName + ", value= " + value;
+        return "Currency: " + baseName + " Rate: " + value;
     }
 }
