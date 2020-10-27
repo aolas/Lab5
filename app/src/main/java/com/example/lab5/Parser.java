@@ -1,46 +1,42 @@
 package com.example.lab5;
 
 import android.util.Log;
-
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class Parser {
     private static final String TAG = "Parser class";
     final Gson gson = new Gson();
-    public ArrayList<Currency> getCurrencyList(String jsonString) {
-        ArrayList<Currency> currencyList = new ArrayList<Currency>() ;
+    public Exchange getbaseList(String jsonString) {
+        ArrayList<Currency> baseList = new ArrayList<Currency>() ;
+        Exchange exchangeStat = null;
         try {
             JSONObject ratesJsonObj = new JSONObject(jsonString);
+            String base = String.valueOf(ratesJsonObj.get("base"));
+            String date = String.valueOf(ratesJsonObj.get("date"));
+            Log.d(TAG,date + " " + base);
             JSONObject ratesSecondLvl = ratesJsonObj.getJSONObject("rates");
             Iterator<String> keyList = ratesSecondLvl.keys();
 
+            exchangeStat = new Exchange(base,date);
             while (keyList.hasNext()){
                 String key = keyList.next();
                 ratesSecondLvl.get(key);
-                //parse value and use it
+                //Parsing into base object
                 Currency newCurrency = new Currency(key,ratesSecondLvl.get(key).toString());
-                currencyList.add(newCurrency);
+                baseList.add(newCurrency);
                 Log.d(TAG, key + ": " + ratesSecondLvl.get(key).toString());
-
             }
-            Log.d(TAG,keyList.toString());
+            exchangeStat.setBaseList(baseList);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return currencyList;
+        return exchangeStat;
 
     }
-
-
 
 }

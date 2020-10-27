@@ -1,24 +1,24 @@
 package com.example.lab5;
 
 public class Currency {
-    String currencyName;
+    String baseName;
     String value;
 
-    public String getCurrencyName() {
-        return currencyName;
+    public String getbaseName() {
+        return baseName;
     }
 
     public String getValue() {
         return value;
     }
 
-    public Currency(String currencyName, String value) {
-        this.currencyName = currencyName;
+    public Currency(String baseName, String value) {
+        this.baseName = baseName;
         this.value = value;
     }
 
-    public void setCurrencyName(String currencyName) {
-        this.currencyName = currencyName;
+    public void setbaseName(String baseName) {
+        this.baseName = baseName;
     }
 
     public void setValue(String value) {
@@ -27,6 +27,6 @@ public class Currency {
 
     @Override
     public String toString() {
-        return "Currency: "+ currencyName + ", value= " + value;
+        return "base: "+ baseName + ", value= " + value;
     }
 }
