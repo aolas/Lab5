@@ -31,7 +31,7 @@ public class Parser {
             }
             exchangeStat.setBaseList(baseList);
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.d(TAG,e.toString());
         }
 
         return exchangeStat;
