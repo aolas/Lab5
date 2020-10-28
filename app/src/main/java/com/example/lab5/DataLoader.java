@@ -24,7 +24,7 @@ public class DataLoader {
                 exchangeStat = dataParser.getbaseList(response);
                 if (exchangeStat != null){
                     txtExchange.setText(exchangeStat.toString());
-                    ArrayAdapter<Currency> dataAdapter = new ArrayAdapter<Currency>(context, android.R.layout.simple_list_item_1, exchangeStat.getbaseList());
+                    ArrayAdapter<Currency> dataAdapter = new ArrayAdapter<Currency>(context, android.R.layout.simple_list_item_1, exchangeStat.getCurrencyList());
                     baseListView.setAdapter(dataAdapter);
                 } else{
                     txtExchange.setText(R.string.parserError);

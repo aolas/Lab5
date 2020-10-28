@@ -28,7 +28,7 @@ public class Exchange {
         this.date = date;
     }
 
-    public ArrayList<Currency> getbaseList() {
+    public ArrayList<Currency> getCurrencyList() {
         return currencyList;
     }
 

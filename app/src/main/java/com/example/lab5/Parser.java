@@ -9,7 +9,6 @@ import java.util.Iterator;
 
 public class Parser {
     private static final String TAG = "Parser class";
-    final Gson gson = new Gson();
     public Exchange getbaseList(String jsonString) {
         ArrayList<Currency> baseList = new ArrayList<Currency>() ;
         Exchange exchangeStat = null;

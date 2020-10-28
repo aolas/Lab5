@@ -29,8 +29,6 @@ public class Currency {
 
     @Override
     public String toString() {
-        //getResources().getString(R.string.my_string);
-
         return App.getRes().getString(R.string.currency) + " " + baseName +" "+ App.getRes().getString(R.string.rate) + " " + value;
     }
 }
