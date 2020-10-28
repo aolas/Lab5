@@ -2,11 +2,6 @@ package com.example.lab5;
 
 import android.content.res.Resources;
 
-import androidx.core.graphics.drawable.IconCompat;
-
-import static androidx.core.content.res.TypedArrayUtils.getText;
-
-
 public class Currency {
     String baseName;
     String value;
@@ -34,6 +29,8 @@ public class Currency {
 
     @Override
     public String toString() {
-        return "Currency: " + baseName + " Rate: " + value;
+        //getResources().getString(R.string.my_string);
+
+        return App.getRes().getString(R.string.currency) + " " + baseName +" "+ App.getRes().getString(R.string.rate) + " " + value;
     }
 }

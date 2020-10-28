@@ -38,6 +38,6 @@ public class Exchange {
 
     @Override
     public String toString() {
-        return "Currency: 1 " + base + ", date: " + date;
+        return App.getRes().getString(R.string.currency) + " 1 " + base + " " + App.getRes().getString(R.string.date) + " " + date;
     }
 }

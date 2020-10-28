@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Lab5</string>
     <string name="loaddata">Load adata</string>
-    <string name="currency">Currency</string>
-    <string name="rate">Rate</string>
+    <string name="currency">Currency:</string>
+    <string name="rate">Rate:</string>
     <string name="parserError">Could not parse data</string>
+    <string name="date">Date:</string>
 </resources>
